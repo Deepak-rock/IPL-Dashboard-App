@@ -3,6 +3,8 @@ import {Component} from 'react'
 import Loader from 'react-loader-spinner'
 
 import TeamCard from '../TeamCard'
+
+import 'react-loader-spinner/dist/loader/css/react-spinner-loader.css'
 import './index.css'
 
 class Home extends Component {

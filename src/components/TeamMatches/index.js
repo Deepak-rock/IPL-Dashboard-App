@@ -4,6 +4,7 @@ import Loader from 'react-loader-spinner'
 
 import LatestMatch from '../LatestMatch'
 import MatchCard from '../MatchCard'
+
 import './index.css'
 
 class TeamMatches extends Component {
@@ -47,7 +48,13 @@ class TeamMatches extends Component {
     })
   }
 
-  renderMatchCard = () => {
+  renderLoader = () => (
+    <div data-testid="loader" className="loader-container">
+      <Loader type="Oval" color="#ffffff" height={50} />
+    </div>
+  )
+
+  renderRecentMatch = () => {
     const {matchsList} = this.state
     const {recentMatches} = matchsList
     return (
@@ -59,25 +66,26 @@ class TeamMatches extends Component {
     )
   }
 
+  renderLatestMatch = () => {
+    const {matchsList} = this.state
+    const {teamBannerUrl, latestMatchDetails} = matchsList
+    return (
+      <div className="team-match-container">
+        <img src={teamBannerUrl} alt="team banner" className="banner-img" />
+        <div className="latest-matches-container">
+          <LatestMatch latestMatch={latestMatchDetails} />
+          {this.renderRecentMatch()}
+        </div>
+      </div>
+    )
+  }
+
   render() {
-    const {matchsList, teamName, isLoading} = this.state
-    console.log(isLoading)
-    const {latestMatchDetails, teamBannerUrl} = matchsList
+    const {teamName, isLoading} = this.state
+
     return (
       <div className={`team-matches-page ${teamName}`}>
-        {isLoading ? (
-          <div data-testid="loader">
-            <Loader type="Oval" color="#ffffff" height={50} width={50} />
-          </div>
-        ) : (
-          <div className="team-match-container">
-            <img src={teamBannerUrl} alt="team banner" className="banner-img" />
-            <div className="latest-matches-container">
-              <LatestMatch latestMatch={latestMatchDetails} />
-              {this.renderMatchCard()}
-            </div>
-          </div>
-        )}
+        {isLoading ? this.renderLoader() : this.renderLatestMatch()}
       </div>
     )
   }

@@ -28,20 +28,20 @@ const LatestMatch = props => {
           <div className="image-container">
             <img
               src={competingTeamLogo}
-              alt={competingTeam}
+              alt={`latest match ${competingTeam}`}
               className="team-logo"
             />
           </div>
         </div>
         <hr />
         <div className="inning-details">
-          <p className="inning-content">First Innings</p>
+          <h3 className="inning-content">First Innings</h3>
           <p className="inning-content-value">{firstInnings}</p>
-          <p className="inning-content">Second Innings</p>
+          <h3 className="inning-content">Second Innings</h3>
           <p className="inning-content-value">{secondInnings}</p>
-          <p className="inning-content">Man of The Match</p>
+          <h3 className="inning-content">Man of The Match</h3>
           <p className="inning-content-value">{manOfTheMatch}</p>
-          <p className="inning-content">Umpires</p>
+          <h3 className="inning-content">Umpires</h3>
           <p className="inning-content-value">{umpires}</p>
         </div>
       </div>

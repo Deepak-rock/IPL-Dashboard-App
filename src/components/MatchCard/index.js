@@ -10,7 +10,7 @@ const MatchCard = props => {
       <div className="recent-match-card">
         <img
           src={competingTeamLogo}
-          alt={competingTeam}
+          alt={`competing team ${competingTeam}`}
           className="team-logo-match"
         />
         <p className="team-name-match">{competingTeam}</p>

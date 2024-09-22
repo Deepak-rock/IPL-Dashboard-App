@@ -5,16 +5,15 @@
   margin: 10px;
   border-radius: 10px;
   width: 140px;
-  padding: 10px;
-}
-.team-link {
-  text-decoration: none;
-  color: #ffffff;
   display: flex;
   gap: 10px;
   align-items: center;
   height: 80px;
   justify-content: center;
+}
+.team-link {
+  text-decoration: none;
+  color: #ffffff;
 }
 .team-img {
   width: 50px;
@@ -29,8 +28,6 @@
 @media screen and (min-width: 375px) {
   .team-item {
     width: 160px;
-  }
-  .team-link {
     height: 100px;
   }
   .team-img {
@@ -49,6 +46,7 @@
 @media screen and (min-width: 768px) {
   .team-item {
     width: 250px;
+    height: 125px;
   }
   .team-img {
     width: 80px;
@@ -62,13 +60,11 @@
 @media screen and (min-width: 1024px) {
   .team-item {
     width: 350px;
+    height: 180px;
   }
   .team-img {
     width: 100px;
     height: 100px;
-  }
-  .team-link {
-    height: 150px;
   }
   .name {
     font-size: 22px;
