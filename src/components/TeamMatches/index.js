@@ -48,12 +48,6 @@ class TeamMatches extends Component {
     })
   }
 
-  renderLoader = () => (
-    <div data-testid="loader" className="loader-container">
-      <Loader type="Oval" color="#ffffff" height={50} />
-    </div>
-  )
-
   renderRecentMatch = () => {
     const {matchsList} = this.state
     const {recentMatches} = matchsList
@@ -79,6 +73,12 @@ class TeamMatches extends Component {
       </div>
     )
   }
+
+  renderLoader = () => (
+    <div testid="loader" className="loader-container">
+      <Loader type="Oval" color="#ffffff" height={50} />
+    </div>
+  )
 
   render() {
     const {teamName, isLoading} = this.state
